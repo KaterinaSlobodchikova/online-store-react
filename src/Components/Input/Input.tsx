@@ -1,0 +1,36 @@
+import { FC, ForwardedRef } from "react";
+import classNames from "classnames";
+
+import styles from "./Input.module.css";
+
+type InputProps = {
+  ref?: ForwardedRef<HTMLInputElement>;
+  type: string;
+  value?: string | number;
+  onChange?: any;
+  placeholder?: string;
+  onKeyDown?: any;
+};
+
+const Input: FC<InputProps> = ({
+  ref,
+  type,
+  value,
+  onChange,
+  placeholder,
+  onKeyDown,
+}) => {
+  return (
+    <input
+      ref={ref}
+      type={type}
+      value={value}
+      onChange={onChange}
+      className={classNames(styles.input)}
+      placeholder={placeholder}
+      onKeyDown={onKeyDown}
+    />
+  );
+};
+
+export default Input;

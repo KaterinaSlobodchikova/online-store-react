@@ -1,0 +1,38 @@
+.signInContainer {
+  width: 100%;
+  min-height: 90vh;
+  padding: 30px 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.signInWrapper {
+  width: 1373px;
+  height: 743px;
+  background: rgba(255, 255, 255, 0.57);
+  box-shadow: -50px 50px 200px #f2f2f2;
+  display: flex;
+  flex-direction: column;
+  font-family: "Montserrat", sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttonWrapper {
+  width: 452px;
+  padding: 30px 0px;
+}
+
+.forgotPassWrapper {
+  padding: 10px 0px 20px 290px;
+  color: rgba(43, 70, 60, 0.77);
+}
+
+span {
+  padding-bottom: 63px;
+}
+
+input {
+  width: 17px;
+  margin-right: 15px;
+}
