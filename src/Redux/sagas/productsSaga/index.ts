@@ -10,7 +10,7 @@ function* getProductsSaga() {
   yield put(setProductsLoading(true));
   const { data, status, problem } = yield call(getAllProductsApi);
   if (status === 200 && data) {
-    yield put(setProducts(data.products));
+    yield put(setProducts(data));
   } else {
     console.log("ERROR FETCHING BOOKS", problem);
   }

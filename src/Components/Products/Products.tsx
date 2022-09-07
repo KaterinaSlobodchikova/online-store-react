@@ -24,8 +24,7 @@ const Products: FC = () => {
 
   return (
     <div className={classNames(styles.productsContainer)}>
-      <p>All products</p>
-      <div>{allProductsElements}</div>
+      <div className={classNames(styles.productsWrapper)}>{allProductsElements}</div>
     </div>
   );
 };

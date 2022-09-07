@@ -1,14 +1,18 @@
-import { RootState } from "./../../store/index";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
+import { ProductModel } from "./../../../Utils/Types/models/product.model";
+import { RootState } from "./../../store";
 
 type InitialStateType = {
   productsList: any[];
   isProductsLoading: boolean;
+  selectedProduct: ProductModel | null;
 };
 
 const initialState: InitialStateType = {
   productsList: [],
   isProductsLoading: false,
+  selectedProduct: null,
 };
 
 const productsSlice = createSlice({

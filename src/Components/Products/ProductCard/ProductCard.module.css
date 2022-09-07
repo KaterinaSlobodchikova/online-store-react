@@ -1,0 +1,55 @@
+.productCardContainer {
+  height: 544px;
+  width: 393px;
+  border-radius: 21px;
+  background: #ffffff;
+  box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.1);
+  border-radius: 21.3688px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.productCardWrapper {
+  padding-top: 15px;
+}
+
+.productCardBackground {
+  display: flex;
+  width: 393px;
+  height: 307px;
+  background: white;
+  margin-bottom: 25px;
+  justify-content: center;
+}
+
+.productInfoWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 35px;
+}
+
+.titleWrapper {
+  height: 70px;
+}
+
+img {
+  max-height: 307px;
+  max-width: 297px;
+}
+
+.shopNowWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.qtyWrapper {
+  width: 157px;
+  height: 52px;
+  border: 1px solid #688f4e;
+  border-radius: 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}

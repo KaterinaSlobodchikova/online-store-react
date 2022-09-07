@@ -1,7 +1,17 @@
 .productsContainer {
-  width: 1120px;
+  width: 100%;
   min-height: 100vh;
 
   display: flex;
   flex-direction: column;
+  background: white;
+  align-items: center;
+}
+
+.productsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  gap: 32px;
+  margin: 50px;
 }
