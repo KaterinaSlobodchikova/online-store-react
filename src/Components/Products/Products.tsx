@@ -1,14 +1,19 @@
 import { FC, useEffect, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import Lottie from "react-lottie-player";
 import classNames from "classnames";
 
 import styles from "./Products.module.css";
 import { getProducts, ProductsSelectors } from "../../Redux/reducers/products";
 import { ProductModel } from "../../Utils/Types/models/product.model";
 import ProductCard from "./ProductCard";
+import lottieJson from "../../Utils/Lotties/loading-animation.json";
 
 const Products: FC = () => {
   const productsList = useSelector(ProductsSelectors.getProducts);
+  const isAllProductsLoading = useSelector(
+    ProductsSelectors.getProductsLoading
+  );
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,7 +29,15 @@ const Products: FC = () => {
 
   return (
     <div className={classNames(styles.productsContainer)}>
-      <div className={classNames(styles.productsWrapper)}>{allProductsElements}</div>
+      <div className={classNames(styles.productsWrapper)}>
+        {allProductsElements}
+      </div>
+      {isAllProductsLoading && (
+        <Lottie
+          animationData={lottieJson}
+          style={{ width: 300, height: 300 }}
+        />
+      )}
     </div>
   );
 };

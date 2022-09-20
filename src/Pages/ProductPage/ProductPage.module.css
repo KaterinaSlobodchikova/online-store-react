@@ -1,0 +1,25 @@
+.productPageContainer {
+  width: 100%;
+  min-height: 90vh;
+  background: white;
+  display: flex;
+}
+
+.productPageWrapper {
+  display: flex;
+}
+
+p {
+  font-size: 18px;
+  font-weight: 400;
+  color: #688f4e;
+}
+
+.buttonWrapper {
+  width: 217px;
+}
+
+.similarProductsWrapper {
+  display: flex;
+  gap: 32px;
+}

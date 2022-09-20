@@ -5,7 +5,6 @@
   background: #ffffff;
   box-shadow: 0px 16px 40px rgba(0, 0, 0, 0.1);
   border-radius: 21.3688px;
-  font-family: "Montserrat", sans-serif;
 }
 
 .productCardWrapper {
@@ -14,11 +13,12 @@
 
 .productCardBackground {
   display: flex;
-  width: 393px;
+  max-width: 393px;
   height: 307px;
   background: white;
   margin-bottom: 25px;
   justify-content: center;
+  align-items: center;
 }
 
 .productInfoWrapper {
@@ -29,7 +29,7 @@
 }
 
 .titleWrapper {
-  height: 70px;
+  height: 45px;
 }
 
 img {

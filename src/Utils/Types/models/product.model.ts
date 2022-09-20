@@ -1,10 +1,15 @@
 export type ProductModel = {
-  id: string;
+  id: number;
   title: string;
-  price: string;
-  category: string;
   description: string;
-  image: string;
+  price: number;
+  discountPercentage: number;
+  rating: number;
+  stock: number;
+  brand: string;
+  thumbnail: string;
+  category: string;
+  images: string[];
 };
 
 export type ProductListType = Array<ProductModel>;

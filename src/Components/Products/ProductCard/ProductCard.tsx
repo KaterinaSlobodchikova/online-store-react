@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { Link } from "react-router-dom";
 import classNames from "classnames";
 
 import styles from "./ProductCard.module.css";
@@ -17,10 +18,14 @@ const ProductCard: FC<ProductCardProps> = (props) => {
     <div className={classNames(styles.productCardContainer)}>
       <div className={classNames(styles.productCardWrapper)}>
         <div className={classNames(styles.productCardBackground)}>
-          <img src={product.image} alt="product-img" />
+          <div className={classNames(styles.imgWrapper)}>
+            <img src={product.images[0]} alt="product-img" />
+          </div>
         </div>
         <div className={classNames(styles.productInfoWrapper)}>
-          <div className={classNames(styles.titleWrapper)}>{product.title}</div>
+          <div className={classNames(styles.titleWrapper)}>
+            <Link to={`/shop/${product?.id}`}>{product.title}</Link>
+          </div>
           <div>$ {product.price}</div>
           <div className={classNames(styles.shopNowWrapper)}>
             <div className={classNames(styles.qtyWrapper)}>
