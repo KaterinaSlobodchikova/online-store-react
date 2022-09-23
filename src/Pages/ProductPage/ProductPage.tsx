@@ -14,6 +14,7 @@ import Button from "../../Components/Button";
 import lottieJson from "../../Utils/Lotties/loading-animation.json";
 import { ProductModel } from "../../Utils/Types/models/product.model";
 import ProductCard from "../../Components/Products/ProductCard";
+import { setCartProducts } from "../../Redux/reducers/cart";
 
 const ProductPage: FC = () => {
   const dispatch = useDispatch();
@@ -29,6 +30,10 @@ const ProductPage: FC = () => {
     window.scrollTo(0, 0);
   }, []);
 
+  const addToCartHandler = (product: ProductModel) => {
+    dispatch(setCartProducts(product));
+  };
+
   const similarProducts = useMemo(() => {
     return productsList
       ?.slice(1, 4)
@@ -39,6 +44,13 @@ const ProductPage: FC = () => {
 
   return (
     <div className={classNames(styles.productPageContainer)}>
+      {isSelectedProductLoading && (
+        <Lottie
+          play
+          animationData={lottieJson}
+          style={{ width: 300, height: 300 }}
+        />
+      )}
       <div className={classNames(styles.productPageWrapper)}>
         <div className={classNames(styles.productWrapper)}>
           <div className={classNames(styles.imageWrapper)}>
@@ -56,7 +68,7 @@ const ProductPage: FC = () => {
             <div className={classNames(styles.buttonWrapper)}>
               <Button
                 title="Add To Cart"
-                onClick={() => {}}
+                onClick={() => addToCartHandler(product!)}
                 type="green"
               ></Button>
             </div>
@@ -72,12 +84,6 @@ const ProductPage: FC = () => {
           </div>
         </div>
       </div>
-      {isSelectedProductLoading && (
-        <Lottie
-          animationData={lottieJson}
-          style={{ width: 300, height: 300 }}
-        />
-      )}
     </div>
   );
 };

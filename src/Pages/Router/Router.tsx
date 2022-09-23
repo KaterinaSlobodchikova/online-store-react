@@ -1,6 +1,7 @@
 import { FC } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Products from "../../Components/Products";
+import CartPage from "../CartPage";
 
 import Home from "../Home";
 import NotFoundPage from "../NotFoundPage";
@@ -18,11 +19,9 @@ enum Pages {
   ShopPage = "shop",
   ProductPage = "shop/:productId",
   CartPage = "cart",
-  Account = "account-info",
   SignInPage = "login",
   SignUpPage = "registration",
   ResetPassword = "reset-password",
-  NewPassword = "new-password",
   Page404 = "*",
 }
 
@@ -33,12 +32,10 @@ const Router: FC = () => {
         <Route path={Pages.Home} element={<Home />}>
           <Route path={Pages.ShopPage} element={<Products />} />
           <Route path={Pages.ProductPage} element={<ProductPage />} />
-          <Route path={Pages.CartPage} element={<MockUp />} />
-          <Route path={Pages.Account} element={<MockUp />} />
+          <Route path={Pages.CartPage} element={<CartPage />} />
           <Route path={Pages.SignInPage} element={<SignIn />} />
           <Route path={Pages.SignUpPage} element={<SignUp />} />
           <Route path={Pages.ResetPassword} element={<ResetPassword />} />
-          <Route path={Pages.NewPassword} element={<MockUp />} />
           <Route path={Pages.Page404} element={<NotFoundPage />} />
         </Route>
       </Routes>

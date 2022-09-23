@@ -34,6 +34,7 @@ const Products: FC = () => {
       </div>
       {isAllProductsLoading && (
         <Lottie
+          play
           animationData={lottieJson}
           style={{ width: 300, height: 300 }}
         />

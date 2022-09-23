@@ -8,7 +8,7 @@ import lottieJson from "../../Utils/Lotties/error-animation.json";
 const NotFoundPage: FC = () => {
   return (
     <div className={classNames(styles.page404Container)}>
-      <Lottie animationData={lottieJson} />
+      <Lottie play animationData={lottieJson} />
     </div>
   );
 };
