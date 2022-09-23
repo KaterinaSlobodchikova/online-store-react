@@ -11,7 +11,7 @@ const Header: FC = () => {
   const navigate = useNavigate();
 
   const homePageHandler = () => {
-    navigate("/");
+    navigate("/shop");
   };
 
   const signInHandler = () => {

@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Products from "../../Components/Products";
 
 import Home from "../Home";
+import NotFoundPage from "../NotFoundPage";
 import ProductPage from "../ProductPage";
 import ResetPassword from "../ResetPassword";
 import SignIn from "../SignIn";
@@ -38,7 +39,7 @@ const Router: FC = () => {
           <Route path={Pages.SignUpPage} element={<SignUp />} />
           <Route path={Pages.ResetPassword} element={<ResetPassword />} />
           <Route path={Pages.NewPassword} element={<MockUp />} />
-          <Route path={Pages.Page404} element={<MockUp />} />
+          <Route path={Pages.Page404} element={<NotFoundPage />} />
         </Route>
       </Routes>
     </BrowserRouter>
