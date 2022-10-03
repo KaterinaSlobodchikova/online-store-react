@@ -10,6 +10,7 @@ export type ProductModel = {
   thumbnail: string;
   category: string;
   images: string[];
+  quantity: number;
 };
 
 export type ProductListType = Array<ProductModel>;

@@ -1,5 +1,8 @@
 .productCardContainer {
-  height: 544px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
   width: 393px;
   border-radius: 21px;
   background: #ffffff;
@@ -7,18 +10,13 @@
   border-radius: 21.3688px;
 }
 
-.productCardWrapper {
-  padding-top: 15px;
-}
-
 .productCardBackground {
   display: flex;
   max-width: 393px;
-  height: 307px;
+  max-height: 307px;
   background: white;
   margin-bottom: 25px;
   justify-content: center;
-  align-items: center;
 }
 
 .productInfoWrapper {
@@ -33,14 +31,22 @@
 }
 
 img {
+  max-height: 100%;
+  max-width: 100%;
+}
+
+.imgWrapper {
+  display: flex;
   max-height: 150px;
   max-width: 297px;
+  justify-content: center;
+  align-items: center;
 }
 
 .shopNowWrapper {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
+  gap: 20px;
 }
 
 .qtyWrapper {

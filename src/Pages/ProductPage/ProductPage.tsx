@@ -14,7 +14,7 @@ import Button from "../../Components/Button";
 import lottieJson from "../../Utils/Lotties/loading-animation.json";
 import { ProductModel } from "../../Utils/Types/models/product.model";
 import ProductCard from "../../Components/Products/ProductCard";
-import { setCartProducts } from "../../Redux/reducers/cart";
+import { CartSelectors, setCartProducts } from "../../Redux/reducers/cart";
 
 const ProductPage: FC = () => {
   const dispatch = useDispatch();
@@ -23,12 +23,17 @@ const ProductPage: FC = () => {
   const isSelectedProductLoading = useSelector(
     ProductsSelectors.getSelectedProductLoading
   );
+  const cartProductsList = useSelector(CartSelectors.getCartProducts);
   const { productId } = useParams<{ productId: string }>();
 
   useEffect(() => {
     dispatch(setSelectedProduct(productId));
     window.scrollTo(0, 0);
   }, []);
+
+  const isProductAtCart = !!cartProductsList.find(
+    (productInfo: ProductModel) => productInfo.id === product?.id
+  );
 
   const addToCartHandler = (product: ProductModel) => {
     dispatch(setCartProducts(product));
@@ -65,13 +70,23 @@ const ProductPage: FC = () => {
             <div className={classNames(styles.descriptionText)}>
               {product?.description}
             </div>
-            <div className={classNames(styles.buttonWrapper)}>
-              <Button
-                title="Add To Cart"
-                onClick={() => addToCartHandler(product!)}
-                type="green"
-              ></Button>
-            </div>
+            {isProductAtCart ? (
+              <div className={classNames(styles.buttonWrapper)}>
+                <Button
+                  title="Added To Cart"
+                  onClick={() => {}}
+                  type="green"
+                ></Button>
+              </div>
+            ) : (
+              <div className={classNames(styles.buttonWrapper)}>
+                <Button
+                  title="Add To Cart"
+                  onClick={() => addToCartHandler(product!)}
+                  type="green"
+                ></Button>
+              </div>
+            )}
           </div>
         </div>
 

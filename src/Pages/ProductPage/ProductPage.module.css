@@ -50,10 +50,6 @@
   gap: 32px;
 }
 
-.imageWrapper :hover {
-  transform: scale(1.8);
-}
-
 .imageWrapper {
   width: 550px;
   display: flex;
